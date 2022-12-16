@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            border:2px solid black;
+            height:20em;
+            width:30em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box1">One</div>
+        <div class="box2">Two</div>
+        <div class="box3">Three</div>
+    </div>
+
+    <script>
+        let box1=document.querySelector(".box1")
+        let box2=document.querySelector(".box2")
+        let box3=document.querySelector(".box3")
+
+        box3.replace(box1)
+    </script>
+</body>
+</html>
