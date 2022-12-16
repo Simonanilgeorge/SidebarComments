@@ -27,16 +27,42 @@ async function main(){
     let commentBox=await waitForElement("ytd-comments")
     let descriptionBox=await waitForElement("#bottom-row.ytd-watch-metadata")
     let videoRecommendations=await waitForElement("ytd-watch-flexy[flexy] #secondary.ytd-watch-flexy")
-    videoRecommendations.style.border="3px solid white"
-    videoRecommendations.style.height="30em"
+    // videoRecommendations.style.border="3px solid white"
+    // videoRecommendations.style.height="30em"
+
     videoRecommendations.style.overflow="auto"
-    // descriptionBox.style.border="2px solid red"
-    videoRecommendations.after(commentBox)
-    videoRecommendations.remove()
-    // descriptionBox.before(commentBox)
+    videoRecommendations.style.height="40em"
+
+    commentBox.style.width=`${videoRecommendations.offsetWidth}px`
     commentBox.style.height="50em"
-    // commentBox.style.border="3px solid white"
     commentBox.style.overflow="auto"
+    
+    
+    // commentBox.style.border="3px solid white"
+
+    let parent=videoRecommendations.parentNode
+    let new_parent=document.createElement("div")
+    // new_parent.style.height="40em"
+    // new_parent.style.border="2px solid green"
+    new_parent.style.display="flex"
+    new_parent.style.flexDirection="column"
+    new_parent.style.gap="5em"
+    
+
+    parent.appendChild(new_parent)
+    new_parent.appendChild(videoRecommendations)
+
+    // add comment box after videRecommendation
+    videoRecommendations.after(commentBox)
+
+
+
+
+    // descriptionBox.style.border="2px solid red"
+    // videoRecommendations.after(commentBox)
+    // videoRecommendations.remove()
+    // descriptionBox.before(commentBox)
+    // commentBox.style.border="3px solid white"
 
     // setInterval(()=>{
     //     commentBox.scrollBy({
