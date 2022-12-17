@@ -3,12 +3,14 @@
     overflow:auto;
     /* height:40em; */
     height: 30em;
+    /* z-index:1000; */
     
 }
 
 .commentBox{
     /* height:40em; */
     overflow: auto;
+    /* z-index:1000; */
     /* border:2px solid red; */
     height: 50em;
 }
@@ -19,5 +21,9 @@
     display: grid;
     grid-auto-flow: row;
     gap:5em;
+    /* width:25em; */
+    overflow: auto;
     padding:0;
+    z-index:1000;
+
 }
