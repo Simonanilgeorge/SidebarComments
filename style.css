@@ -1,0 +1,23 @@
+.videoRecommendations{
+    /* border:2px solid white; */
+    overflow:auto;
+    /* height:40em; */
+    height: 30em;
+    
+}
+
+.commentBox{
+    /* height:40em; */
+    overflow: auto;
+    /* border:2px solid red; */
+    height: 50em;
+}
+
+
+.new-parent{
+    border:2px solid green;
+    display: grid;
+    grid-auto-flow: row;
+    gap:5em;
+    padding:0;
+}
