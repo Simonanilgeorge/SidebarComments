@@ -19,9 +19,8 @@
           "content.js"
         ],
         "css":["style.css"],
-        "matches": ["https://www.youtube.com/watch?v=*"]
+        "matches": ["https://www.youtube.com/watch?v=*","https://www.youtube.com/*", "https://youtube.com/*"]
       }
-    ],
-    "permissions":["tabs","activeTab"]
+    ]
   }
   
