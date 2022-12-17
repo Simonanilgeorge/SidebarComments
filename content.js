@@ -39,12 +39,13 @@ async function waitForElement(selector) {
 async function main() {
 
   // get the respective elements;
-  let commentBox = await waitForElement("ytd-comments")
+  let commentBox = await waitForElement("ytd-comments#comments") 
   let descriptionBox = await waitForElement("#bottom-row.ytd-watch-metadata")
   let videoRecommendations = await waitForElement("ytd-watch-flexy[flexy] #secondary.ytd-watch-flexy")
 
-  // set the width of the comment box the same as video recommendation box 
-  commentBox.style.width = `${videoRecommendations.offsetWidth}px`
+  // set the width of the comment box the same as video recommendation box; you need to use await because sometimes width gets assigned before the value gets loaded into videoRecommendations
+  commentBox.style.width=`${await checkWidth(videoRecommendations)}px`
+  // commentBox.style.width = `${videoRecommendations.offsetWidth}px`
 
   // add styles to comment box
   commentBox.classList.add("commentBox")
@@ -69,12 +70,28 @@ async function main() {
   //add video recommendation box to new parent element 
   new_parent.appendChild(videoRecommendations)
 
-  // add comment box after videRecommendation
-  // commentBox.before(videoRecommendations)
-  // videoRecommendations.after(commentBox)
 
 }
 
+// function to check if width of an element is greater than 0; if width is greater than 0 then resolve
+async function checkWidth(element){
+
+  // create a new promise
+  return new Promise((resolve,reject)=>{
+    const check=()=>{
+      if(element.offsetWidth>0){
+        // if element has a width greater than 0 then resolve
+        resolve(element.offsetWidth)
+      }
+      else{
+        // if width is still 0 use requestAnimationFrame to check until width is not 0 
+        requestAnimationFrame(check)
+      }
+    }
+    // call the check function initially
+    check()
+  })
+}
 
 // custom function that can be used to wait for some time
 function wait(amount) {
