@@ -62,15 +62,11 @@ async function main() {
   // add the new parent element to the parent element
   parent.appendChild(new_parent)
 
-  //add video recommendation box to new parent element 
-  new_parent.appendChild(videoRecommendations)
-
   // append comment box to the new parent element 
   new_parent.appendChild(commentBox)
 
-
-
-
+  //add video recommendation box to new parent element 
+  new_parent.appendChild(videoRecommendations)
 
 }
 
