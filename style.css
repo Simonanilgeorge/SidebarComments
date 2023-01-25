@@ -13,10 +13,11 @@
 }
 
 .videoRecommendations::-webkit-scrollbar-thumb{
-    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+
+    background: rgb(48, 47, 47);
 }
 .commentBox::-webkit-scrollbar-thumb {
-    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background: rgb(48, 47, 47);
 }
 
 .videoRecommendations{
@@ -30,13 +31,12 @@
 
 
 .new-parent{
-    border:3px solid rgb(99, 98, 98);
+    border:3px solid rgb(92, 92, 92);
     border-radius: 5px;
     box-sizing: border-box;  
     display: grid;
     padding:1em;
-    /* grid-template-columns: repeat(1,1fr); */
-    grid-template-rows: repeat(1,2fr 1fr);
+    grid-template-rows: repeat(2,1fr);
     gap:1em;
     height: 100vh;
     z-index:1000;
