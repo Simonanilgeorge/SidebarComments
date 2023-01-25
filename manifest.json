@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "SidebarComments",
-  "version": "1.0",
+  "version": "1.1",
   "description": "Move the comment section to the side bar and add a scroll to recommended videos and comments",
   "icons": {
     "16": "images/icon-16.png",
@@ -29,9 +29,7 @@
         "style.css"
       ],
       "matches": [
-        "https://www.youtube.com/watch?v=*",
-        "https://www.youtube.com/*",
-        "https://youtube.com/*"
+        "https://www.youtube.com/watch?v=*"
       ]
     }
   ]
